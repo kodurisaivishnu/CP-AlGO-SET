@@ -1,0 +1,37 @@
+import java.util.*;
+
+class Seive {
+    private static boolean Seive(int n) {
+        int MAX = 1001; // Define the upper limit for primes
+        boolean[] isPrime = new boolean[MAX];
+
+        // Step 1: Assume all numbers are prime, then mark non-primes
+        Arrays.fill(isPrime, true);
+        isPrime[0] = isPrime[1] = false; // 0 and 1 are not prime numbers
+
+        // Step 2: Mark multiples of each prime starting from 2
+        for (int i = 2; i * i < MAX; i++) {
+            if (isPrime[i]) {
+                for (int j = i * i; j < MAX; j += i) {
+                    isPrime[j] = false;
+                }
+            }
+        }
+
+        // Optional: Collect or print all primes up to MAX
+        ArrayList<Integer> prime = new ArrayList<>();
+        for (int i = 2; i < MAX; i++) {
+            if (isPrime[i]) {
+                prime.add(i);
+            }
+        }
+        int res = Collections.binarySearch(prime, n);
+        if (res >= 0)
+            return true;
+        return false;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(Seive(2));
+    }
+}
