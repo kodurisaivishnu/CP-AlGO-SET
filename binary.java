@@ -6,6 +6,7 @@ public class binary {
       ans.add(new ArrayList<>(temp));
     } else {
       for (int i = 0; i < 2; i++) { // numeber of choces can vary on 2 = n
+         //if (!temp.isEmpty() && temp.get(temp.size() - 1) == 1 && i == 1) continue; if without consecutive ones
         temp.add(i);
         sol(ans, temp, n);
         temp.remove(temp.size() - 1);
