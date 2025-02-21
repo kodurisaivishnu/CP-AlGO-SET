@@ -83,6 +83,27 @@ class MergeSort {
   }
 }
 
+class CountingSort {
+  public void sort(int arr[]) {
+    int max = Arrays.stream(arr).max().getAsInt();
+    int min = Arrays.stream(arr).min().getAsInt();
+
+    int range = max - min + 1;
+    int cnt[] = new int[range];
+
+    for (int i = 0; i < arr.length; i++) {
+      cnt[arr[i] - min]++;
+    }
+
+    int k = 0;
+    for (int i = 0; i < range; i++) {
+      while (cnt[i]-- > 0) {
+        arr[k++] = i + min;
+      }
+    }
+  }
+}
+
 class InsertionSort {
   public void sort(int arr[]) {
     for (int i = 1; i < arr.length; i++) {
@@ -121,11 +142,34 @@ class SelectionSort {
 
 }
 
+class BubbleSort {
+  public void sort(int arr[]) {
+    int n = arr.length;
+    for (int i = 0; i < n; i++) {
+      boolean swapDone = false;
+      for (int j = 0; j < n - i - 1; j++) {
+        if (arr[j] > arr[j + 1]) {
+          swapDone = true;
+          swap(arr, j, j + 1);
+        }
+      }
+      if (!swapDone)
+        break;
+    }
+  }
+
+  public void swap(int arr[], int a, int b) {
+    int t = arr[a];
+    arr[a] = arr[b];
+    arr[b] = t;
+  }
+}
+
 public class Sortings {
   public static void main(String[] args) {
     int arr[] = { 2, 1, 3, 4, 1, 33, 4, 5 };
-    QuickSort qs = new QuickSort();
-    qs.sort(arr);
+    BubbleSort bs = new BubbleSort();
+    bs.sort(arr);
     System.out.println(Arrays.toString(arr));
   }
 }
