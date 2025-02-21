@@ -165,11 +165,51 @@ class BubbleSort {
   }
 }
 
+class RadixSort {
+  public void sort(int arr[]) {
+    // Step 1: Get max number to determine number of digits
+    int max = Integer.MIN_VALUE;
+    for (int x : arr) {
+      max = Math.max(x, max);
+    }
+
+    // Step 2: Perform counting sort for each digit place value
+    for (int place = 1; max / place > 0; place *= 10) {
+      countSortForRadixSort(arr, place);
+    }
+  }
+
+  void countSortForRadixSort(int arr[], int place) {
+    int n = arr.length;
+    List<Integer>[] buckets = new ArrayList[10];
+
+    // Initialize buckets
+    for (int i = 0; i < 10; i++) {
+      buckets[i] = new ArrayList<>();
+    }
+
+    // Store numbers in respective buckets based on digit at `place`
+    for (int i = 0; i < n; i++) {
+      int faceVal = (arr[i] / place) % 10;
+      buckets[faceVal].add(arr[i]);
+    }
+
+    // Copy elements back to arr in sorted order
+    int k = 0;
+    for (int i = 0; i < 10; i++) {
+      for (int num : buckets[i]) {
+        arr[k++] = num;
+      }
+    }
+  }
+
+}
+
 public class Sortings {
   public static void main(String[] args) {
     int arr[] = { 2, 1, 3, 4, 1, 33, 4, 5 };
-    BubbleSort bs = new BubbleSort();
-    bs.sort(arr);
+    RadixSort rs = new RadixSort();
+    rs.sort(arr);
     System.out.println(Arrays.toString(arr));
   }
 }
