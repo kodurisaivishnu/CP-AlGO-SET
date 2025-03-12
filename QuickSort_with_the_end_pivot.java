@@ -17,8 +17,8 @@ class QuickSort {
   }
 
   public int part(int arr[], int lb, int ub) {
-    int s = lb;//insted of lb-1
-    int e = ub-1;
+    int s = lb;
+    int e = ub-1; //this is v.v ip while taking end pivot 
     int pivot = arr[ub]; 
     while (s <= e) {
       while (s <= e && arr[s] <= pivot) {
