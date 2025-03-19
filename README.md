@@ -17,3 +17,10 @@ DP :
 this is the most confusing question i have seen:  (Initially i think for bs in answers but not)
 https://leetcode.com/problems/filling-bookcase-shelves/description/
 
+
+Cyclic Sort: 
+
+
+https://www.geeksforgeeks.org/minimum-number-swaps-required-sort-array/
+
+
