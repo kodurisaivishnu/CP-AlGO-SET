@@ -24,3 +24,8 @@ Cyclic Sort:
 https://www.geeksforgeeks.org/minimum-number-swaps-required-sort-array/
 
 
+
+DSU imp questoin: 
+https://leetcode.com/problems/minimum-cost-walk-in-weighted-graph/description/?envType=daily-question&envId=2025-03-20
+
+
