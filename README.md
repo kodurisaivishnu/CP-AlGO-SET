@@ -28,4 +28,7 @@ https://www.geeksforgeeks.org/minimum-number-swaps-required-sort-array/
 DSU imp questoin: 
 https://leetcode.com/problems/minimum-cost-walk-in-weighted-graph/description/?envType=daily-question&envId=2025-03-20
 
+Topologiacal sort imp;
+https://leetcode.com/problems/find-all-possible-recipes-from-given-supplies/description/?envType=daily-question&envId=2025-03-21
+
 
