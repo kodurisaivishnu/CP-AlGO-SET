@@ -78,5 +78,4 @@ public class Sol {
         System.out.println(trie.search("apple"));
         System.out.println(trie.startsWith("app"));
     }
-
 }
