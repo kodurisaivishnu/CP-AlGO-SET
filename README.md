@@ -20,7 +20,6 @@ https://leetcode.com/problems/filling-bookcase-shelves/description/
 
 Cyclic Sort: 
 
-
 https://www.geeksforgeeks.org/minimum-number-swaps-required-sort-array/
 
 
@@ -30,5 +29,9 @@ https://leetcode.com/problems/minimum-cost-walk-in-weighted-graph/description/?e
 
 Topologiacal sort imp;
 https://leetcode.com/problems/find-all-possible-recipes-from-given-supplies/description/?envType=daily-question&envId=2025-03-21
+
+
+Greedy: 
+https://leetcode.com/problems/put-marbles-in-bags/
 
 
