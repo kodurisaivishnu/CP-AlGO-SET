@@ -7,6 +7,8 @@ Revice the very standard Quesion of monotonic stack ds using dqeue :  https://ww
 
 Sliding Window: 
 
+
+
 1) https://leetcode.com/problems/binary-subarrays-with-sum/description/?source=post_page-----f943ea367bfa---------------------------------------   ( k - (k-1) )
 
 2) https://leetcode.com/problems/count-of-substrings-containing-every-vowel-and-k-consonants-ii/submissions/1569190633/?envType=daily-question&envId=2025-03-10 (k - (k+1) )
@@ -32,6 +34,11 @@ https://leetcode.com/problems/find-all-possible-recipes-from-given-supplies/desc
 
 
 Greedy: 
+
 https://leetcode.com/problems/put-marbles-in-bags/
+
+Greedy + BS: 
+
+https://leetcode.com/problems/maximum-tastiness-of-candy-basket/description/
 
 
