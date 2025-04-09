@@ -41,4 +41,8 @@ Greedy + BS:
 
 https://leetcode.com/problems/maximum-tastiness-of-candy-basket/description/
 
+HashMap Looup: 
+https://leetcode.com/problems/count-number-of-pairs-with-absolute-difference-k/description/
+
+
 
