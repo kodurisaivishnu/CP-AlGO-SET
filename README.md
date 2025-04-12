@@ -49,4 +49,10 @@ https://leetcode.com/problems/count-number-of-pairs-with-absolute-difference-k/d
 https://leetcode.com/problems/k-diff-pairs-in-an-array
 
 
+lookMashUp d1: 
+
+
+https://leetcode.com/discuss/post/5190444/dynamic-programming-problems-category-wi-7xpk/
+
+
 
