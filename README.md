@@ -14,6 +14,7 @@ Sliding Window:
 2) https://leetcode.com/problems/count-of-substrings-containing-every-vowel-and-k-consonants-ii/submissions/1569190633/?envType=daily-question&envId=2025-03-10 (k - (k+1) )
 
 3)  contoversy thinking problem:  https://leetcode.com/problems/minimum-operations-to-reduce-x-to-zero/
+4)  https://leetcode.com/problems/minimum-size-subarray-sum/description/
 
 
 DP : 
