@@ -1,4 +1,4 @@
-# Important-Algos -problmes
+# Important-Algos -problmes   https://leetcode.com/problems/count-of-interesting-subarrays/?envType=daily-question&envId=2025-04-25
 
 vvv ip:  https://www.geeksforgeeks.org/problems/longest-valid-parentheses5657/1
 
