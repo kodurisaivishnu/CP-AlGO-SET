@@ -1,4 +1,5 @@
 # Important-Algos -problmes   https://leetcode.com/problems/count-of-interesting-subarrays/?envType=daily-question&envId=2025-04-25
+https://www.geeksforgeeks.org/problems/longest-subarray-with-majority-greater-than-k
 
 vvv ip:  https://www.geeksforgeeks.org/problems/longest-valid-parentheses5657/1
 
