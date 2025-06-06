@@ -1,46 +1,49 @@
 class Solution {
-    static long mod = (int)(1e9+7);
-    static long BASE = 26;
-    
-    long hashValue(String s){
-        int m = s.length();
-        long val = 1;
-        long res = 0;
-        for(int i = m-1;i>=0;i--){
-            res = ( res + val * ( s.charAt(i)-'a' ) ) % mod;
-            val = (val*26) % mod;
-        }
-        return res;
-    }
-    ArrayList<Integer> search(String pat, String txt) {
-        // Code here
-        ArrayList<Integer> ans = new ArrayList<>();
-        int n = txt.length();
-        int m = pat.length();
-        long MAX = 1;
-    
-        for(int i = 0;i<m-1;i++) MAX = (MAX  * 26) % mod; //26^(m-1)
-        
-        long targetVal = hashValue(pat);
-        //first window
-        long cur = hashValue(txt.substring(0,m));
-        if(targetVal == cur && txt.substring(0,m).equals(pat)){
-                ans.add(1);
-        }
-        
-        for(int i = m;i<n;i++){
-            cur = ( cur - ( (txt.charAt(i - m) - 'a') * MAX) % mod + mod) % mod;
+    static final long MOD = (long)1e9 + 7;
+    static final long BASE = 31; // Slightly better than 26 due to fewer collisions
 
-            cur = ( cur * 26) % mod;
-            cur = ( cur + txt.charAt(i)-'a') % mod;
-            
-            if(cur == targetVal && txt.substring(i-m+1,i+1).equals(pat)){
-                ans.add(i-m+2); // for one based indexing
+    long computeHash(String s) {
+        long hash = 0, power = 1;
+        for (int i = s.length() - 1; i >= 0; i--) {
+            hash = (hash + (s.charAt(i) - 'a' + 1) * power % MOD) % MOD;
+            power = (power * BASE) % MOD;
+        }
+        return hash;
+    }
+
+    ArrayList<Integer> search(String pat, String txt) {
+        ArrayList<Integer> ans = new ArrayList<>();
+        int m = pat.length(), n = txt.length();
+        if (m > n) return ans;
+
+        long patHash = computeHash(pat);
+        long curHash = computeHash(txt.substring(0, m));
+
+        long maxPow = 1;
+        for (int i = 1; i < m; i++) maxPow = (maxPow * BASE) % MOD;
+
+        if (curHash == patHash && txt.substring(0, m).equals(pat)) {
+            ans.add(1);
+        }
+
+        for (int i = m; i < n; i++) {
+            // Remove leftmost character
+            long leftChar = (txt.charAt(i - m) - 'a' + 1) * maxPow % MOD;
+            curHash = (curHash - leftChar + MOD) % MOD;
+
+            // Shift window and add new character
+            curHash = (curHash * BASE) % MOD;
+            curHash = (curHash + (txt.charAt(i) - 'a' + 1)) % MOD;
+
+            if (curHash == patHash && txt.substring(i - m + 1, i + 1).equals(pat)) {
+                ans.add(i - m + 2); // 1-based index
             }
         }
+
         return ans;
     }
 }
+
 
 public class Rabin_Crap_StringMatch{
   public static void main(Sting args[]){
