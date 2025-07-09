@@ -210,7 +210,7 @@ public class HeapSort {
     public void heapSort(int[] arr) {
         int n = arr.length;
 
-        // Step 1: Build Max Heap
+        // Step 1: Build Max Heap (bcz:we have 0 ----> n/2 non leaf nodes and n/2+1 ------> n we have leaf nodes in complete BT)
         for (int i = n / 2 - 1; i >= 0; i--)
             heapify(arr, n, i);
 
