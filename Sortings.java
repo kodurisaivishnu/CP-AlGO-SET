@@ -205,6 +205,59 @@ class RadixSort {
 
 }
 
+public class HeapSort {
+
+    public void heapSort(int[] arr) {
+        int n = arr.length;
+
+        // Step 1: Build Max Heap
+        for (int i = n / 2 - 1; i >= 0; i--)
+            heapify(arr, n, i);
+
+        // Step 2: Extract elements from heap one by one
+        for (int i = n - 1; i >= 0; i--) {
+            // Move current root to end
+            swap(arr, 0, i);
+
+            // Call max heapify on the reduced heap
+            heapify(arr, i, 0);
+        }
+    }
+
+    // Function to heapify a subtree rooted at index i
+    void heapify(int[] arr, int n, int i) {
+        int largest = i;      // Initialize largest as root
+        int left = 2 * i + 1; // left child
+        int right = 2 * i + 2; // right child
+
+        if (left < n && arr[left] > arr[largest])
+            largest = left;
+
+        if (right < n && arr[right] > arr[largest])
+            largest = right;
+
+        // If root is not largest, swap and continue heapifying
+        if (largest != i) {
+            swap(arr, i, largest);
+            heapify(arr, n, largest);
+        }
+    }
+
+    // Utility to swap two elements
+    void swap(int[] arr, int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+
+    // Utility to print array
+    void printArray(int[] arr) {
+        for (int val : arr)
+            System.out.print(val + " ");
+        System.out.println();
+    }
+}
+
 public class Sortings {
   public static void main(String[] args) {
     int arr[] = { 2, 1, 3, 4, 1, 33, 4, 5 };
